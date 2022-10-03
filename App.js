@@ -1,16 +1,15 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, View } from "react-native";
-import Berita from "./src/components/Berita";
+import { StyleSheet, Text, View } from "react-native";
 import Login from "./src/components/Login";
 
 export default function App() {
   const client = new QueryClient();
   return (
     <QueryClientProvider client={client}>
-      <Berita />
       <View style={styles.container}>
         <StatusBar style="auto" />
+        <Text>Hello world</Text>
         <Login />
       </View>
     </QueryClientProvider>

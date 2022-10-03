@@ -1,6 +1,7 @@
 {
   "expo": {
-    "scheme": "com.bkd.simaster-mobile",
+    "owner": "p3dasi",
+    "scheme": "com.bkd.simastermobile",
     "name": "simaster-mobile",
     "slug": "simaster-mobile",
     "version": "1.0.0",
@@ -20,7 +21,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.bkd.simaster-mobile",
+      "package": "com.bkd.simastermobile",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
