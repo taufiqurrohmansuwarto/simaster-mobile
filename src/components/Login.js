@@ -1,10 +1,10 @@
-import { Text, View, Button, Platform } from "react-native";
+import { Button, Text, View } from "react-native";
 
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 
 WebBrowser.maybeCompleteAuthSession();
-const useProxy = true;
+const useProxy = false;
 const redirectUri = AuthSession.makeRedirectUri({
   useProxy,
   scheme: "com.bkd.simastermobile",

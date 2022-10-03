@@ -7,10 +7,8 @@ export default function App() {
   const client = new QueryClient();
   return (
     <QueryClientProvider client={client}>
-      est
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Text>tes</Text>
         <Login />
       </View>
     </QueryClientProvider>
