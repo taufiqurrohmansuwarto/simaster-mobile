@@ -92,34 +92,25 @@ export default function App() {
   };
 
   return (    
-    <AuthContext.Provider value={authContext}>
-    <NavigationContainer>
-      <SafeAreaProvider style={{ flex: 1 }}>
-        <QueryClientProvider client={queryClient}>
-          {loginState.isLoading ? (
-            <View>
-              <Text>Loading...</Text>
-            </View>
-          ) : loginState.user ? (
-            <Berita />
-          ) : (
-            <Login />
-          )}
-        </QueryClientProvider>
-      </SafeAreaProvider>
-    </NavigationContainer>
-  </AuthContext.Provider>
+     <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        <SafeAreaProvider style={{ flex: 1 }}>
+          <QueryClientProvider client={queryClient}>
+            {loginState.isLoading ? (
+              <View>
+                <Text>Loading...</Text>
+              </View>
+            ) : loginState.user ? (
+              <Berita />
+            ) : (
+              <Login />
+            )}
+          </QueryClientProvider>
+        </SafeAreaProvider>
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#eee",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-);
