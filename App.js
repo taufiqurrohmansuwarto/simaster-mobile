@@ -91,30 +91,24 @@ export default function App() {
     }
   };
 
-  return (
+  return (    
+    <AuthContext.Provider value={authContext}>
     <NavigationContainer>
-      <View>
-        <Pernikahan />
-    </View>
+      <SafeAreaProvider style={{ flex: 1 }}>
+        <QueryClientProvider client={queryClient}>
+          {loginState.isLoading ? (
+            <View>
+              <Text>Loading...</Text>
+            </View>
+          ) : loginState.user ? (
+            <Berita />
+          ) : (
+            <Login />
+          )}
+        </QueryClientProvider>
+      </SafeAreaProvider>
     </NavigationContainer>
-    
-    // <AuthContext.Provider value={authContext}>
-    //   <NavigationContainer>
-    //     <SafeAreaProvider style={{ flex: 1 }}>
-    //       <QueryClientProvider client={queryClient}>
-    //         {loginState.isLoading ? (
-    //           <View>
-    //             <Text>Loading...</Text>
-    //           </View>
-    //         ) : loginState.user ? (
-    //           <Berita />
-    //         ) : (
-    //           <Login />
-    //         )}
-    //       </QueryClientProvider>
-    //     </SafeAreaProvider>
-    //   </NavigationContainer>
-    // </AuthContext.Provider>
+  </AuthContext.Provider>
   );
 }
 
