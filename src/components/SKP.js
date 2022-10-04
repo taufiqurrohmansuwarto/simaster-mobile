@@ -1,20 +1,20 @@
 import { Text, StyleSheet, View } from "react-native";
 import { colors } from "../../utils/color";
 
-const Pernikahan = () => {
+const SKP = () => {
   return (
     <View style={styles.container}>
         <View style={styles.ShapeBiru}>
-        <Text>Pernikahan</Text>
+        <Text>Data SKP</Text>
         <View>
-          <Text>Tanggal Pernikahan:</Text>
+          <Text>Tanggal SKP:</Text>
         </View>
         </View>
     </View>
   );
 };
 
-export default Pernikahan;
+export default SKP;
 
 const styles = StyleSheet.create({
     container: {

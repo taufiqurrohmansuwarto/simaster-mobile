@@ -1,20 +1,20 @@
 import { Text, StyleSheet, View } from "react-native";
 import { colors } from "../../utils/color";
 
-const Pernikahan = () => {
+const Suamiistri = () => {
   return (
     <View style={styles.container}>
         <View style={styles.ShapeBiru}>
-        <Text>Pernikahan</Text>
+        <Text>Suami / Istri</Text>
         <View>
-          <Text>Tanggal Pernikahan:</Text>
+          <Text>Tanggal Suami:</Text>
         </View>
         </View>
     </View>
   );
 };
 
-export default Pernikahan;
+export default Suamiistri;
 
 const styles = StyleSheet.create({
     container: {
