@@ -1,14 +1,14 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import * as SecureStore from "expo-secure-store";
 import jwt_decode from "jwt-decode";
 import { useEffect, useMemo, useReducer } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Berita from "./src/components/Berita";
 import Login from "./src/components/Login";
 
 import AuthContext from "./src/context/auth.context";
+import Router from './src/routes';
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -91,9 +91,10 @@ export default function App() {
     }
   };
 
+  const Tab = createBottomTabNavigator();
+
   return (    
-     <AuthContext.Provider value={authContext}>
-       <NavigationContainer>
+    <AuthContext.Provider value={authContext}>
         <SafeAreaProvider style={{ flex: 1 }}>
           <QueryClientProvider client={queryClient}>
             {loginState.isLoading ? (
@@ -101,13 +102,13 @@ export default function App() {
                 <Text>Loading...</Text>
               </View>
             ) : loginState.user ? (
-              <Berita />
+              // <Berita />
+              <Router />
             ) : (
               <Login />
             )}
           </QueryClientProvider>
         </SafeAreaProvider>
-      </NavigationContainer> 
     </AuthContext.Provider>
   );
 }
