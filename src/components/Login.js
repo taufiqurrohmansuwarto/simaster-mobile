@@ -1,7 +1,7 @@
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { useContext, useEffect } from "react";
-import { Button, View, StyleSheet, Image } from "react-native";
+import { Button, Image, StyleSheet, View } from "react-native";
 import base64 from "react-native-base64";
 import authContext from "../context/auth.context";
 

@@ -7,6 +7,7 @@ import { Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import BottomTabs from "./screens/BottomTab.screen";
 import Login from "./src/components/Login";
+
 import AuthContext from "./src/context/auth.context";
 
 export default function App() {
@@ -90,9 +91,9 @@ export default function App() {
     }
   };
 
-  return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
+  return (    
+     <AuthContext.Provider value={authContext}>
+       <NavigationContainer>
         <SafeAreaProvider style={{ flex: 1 }}>
           <QueryClientProvider client={queryClient}>
             {loginState.isLoading ? (
@@ -106,7 +107,10 @@ export default function App() {
             )}
           </QueryClientProvider>
         </SafeAreaProvider>
-      </NavigationContainer>
+      </NavigationContainer> 
     </AuthContext.Provider>
   );
 }
+
+
+
