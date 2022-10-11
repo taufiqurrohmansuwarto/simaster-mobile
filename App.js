@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 import { useEffect, useMemo, useReducer } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Berita from "./src/components/Berita";
+import BottomTabs from "./screens/BottomTab.screen";
 import Login from "./src/components/Login";
 import AuthContext from "./src/context/auth.context";
 
@@ -100,7 +100,7 @@ export default function App() {
                 <Text>Loading...</Text>
               </View>
             ) : loginState.user ? (
-              <Berita />
+              <BottomTabs />
             ) : (
               <Login />
             )}
