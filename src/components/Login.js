@@ -1,7 +1,7 @@
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { useContext, useEffect } from "react";
-import { Button, Image, StyleSheet, View } from "react-native";
+import { Text, Button, Image, StyleSheet, View } from "react-native";
 import base64 from "react-native-base64";
 import authContext from "../context/auth.context";
 
@@ -28,7 +28,13 @@ const Login = () => {
     {
       clientId: CLIENT_ID,
       redirectUri,
-      scopes: ["openid", "profile", "email", "pegawai:0", "organization:1"],
+      scopes: [
+        "openid",
+        "profile",
+        "email",
+        "pegawai:0",
+        "organization:1 read:cv",
+      ],
       prompt: "login",
     },
     discovery
@@ -77,11 +83,17 @@ const Login = () => {
         disabled={!request}
         onPress={() => promptAsync({ useProxy })}
       />
+      <Text style={styles.version}>Ver. 0.0.0</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  version: {
+    fontSize: 12,
+    marginVertical: 2,
+    fontWeight: "bold",
+  },
   container: {
     flex: 1,
     backgroundColor: "#eee",

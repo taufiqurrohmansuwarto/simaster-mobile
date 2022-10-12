@@ -6,8 +6,7 @@ const Profile = () => {
   const { logout } = useContext(authContext);
   return (
     <View>
-      <Text>hello world</Text>
-      <Button onPress={logout} title="Logout" />
+      <Button onPress={logout} title="Keluar" />
     </View>
   );
 };

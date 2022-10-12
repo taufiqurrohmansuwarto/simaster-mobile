@@ -1,8 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../src/components/Home";
 import Profile from "../src/components/Profile";
 
 import { AntDesign } from "@expo/vector-icons";
+import Beranda from "../src/components/Beranda";
+import Faq from "../src/components/FAQ";
+import VideoHCA from "../src/components/VideoHCA";
 
 const Tabs = createBottomTabNavigator();
 const BottomTabs = () => {
@@ -24,9 +26,9 @@ const BottomTabs = () => {
         },
       })}
     >
-      <Tabs.Screen name="Beranda" safeAreaInset={0} component={Home} />
-      <Tabs.Screen name="Video HCA" safeAreaInset={0} component={Home} />
-      <Tabs.Screen name="F.A.Q" safeAreaInset={0} component={Home} />
+      <Tabs.Screen name="Beranda" safeAreaInset={0} component={Beranda} />
+      <Tabs.Screen name="Video HCA" safeAreaInset={0} component={VideoHCA} />
+      <Tabs.Screen name="F.A.Q" safeAreaInset={0} component={Faq} />
       <Tabs.Screen name="Akun" safeAreaInset={0} component={Profile} />
     </Tabs.Navigator>
   );
