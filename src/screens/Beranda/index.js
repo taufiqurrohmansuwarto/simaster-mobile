@@ -39,7 +39,6 @@ const Beranda = () => {
       
       <Gap height={15} />
       <Slider />
-      <Button onPress={logout} title="Keluar" />
 
       <View style={styles.iconContainer}>
         <IconBeranda text="Personal" icon={<Personal width={60} height={60} />} navigation={navigation} />

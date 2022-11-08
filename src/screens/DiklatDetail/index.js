@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../../utils';
 import { Card, Header, HeaderSmallPic } from '../../components';
 import moment from 'moment/moment';
-// import 'moment/locale/id'
+import 'moment/locale/id'
 
 const DiklatDetail = ({ navigation, route }) => {
   const { item } = route.params.item

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { IconBack } from '../../../assets'
 
-const HeaderWithIconBack = ({ navigation }) => {
+const HeaderWithIconBack = ({ navigation, title }) => {
   return (
     <View style={styles.container}>
       <View style={styles.iconBack}>
@@ -11,7 +11,7 @@ const HeaderWithIconBack = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.title}>
-        <Text style={styles.text}>Akun</Text>
+        <Text style={styles.text}>{title}</Text>
       </View>
     </View>
   )

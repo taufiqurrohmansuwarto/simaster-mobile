@@ -26,7 +26,7 @@ const Diklat = () => {
             data={data?.diklat}
             renderItem={item => {
               return (
-                <CardList navigation={navigation} item={item}>
+                <CardList height={80} navigation={navigation} item={item} screen={'DiklatDetail'}>
                   <View>
                     <Text style={styles.titleDiklat}>{item.item.nama_diklat}</Text>
                   </View>

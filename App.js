@@ -90,8 +90,6 @@ export default function App() {
     }
   };
 
-  const Tab = createBottomTabNavigator();
-
   return (    
      <AuthContext.Provider value={authContext}>
       <SafeAreaProvider style={{ flex: 1 }}>

@@ -8,6 +8,8 @@ import DiklatDetail from "./DiklatDetail";
 import Akun from "./Akun";
 import About from "./About";
 import SettingAkun from "./SettingAkun";
+import Faq from "./Faq";
+import FaqDetail from "./FaqDetail";
 
 export {
   Beranda,
@@ -19,5 +21,7 @@ export {
   DiklatDetail,
   Akun,
   About,
-  SettingAkun
+  SettingAkun,
+  Faq,
+  FaqDetail
 }

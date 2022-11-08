@@ -17,7 +17,7 @@ const About = ({ navigation }) => {
   return (
     <SafeAreaView>
       <Header>
-        <HeaderWithIconBack navigation={navigation} />
+        <HeaderWithIconBack navigation={navigation} title={'Akun'} />
       </Header>
       <View style={styles.userContainer}>
         <View style={styles.userPic}>
