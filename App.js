@@ -1,14 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import * as SecureStore from "expo-secure-store";
 import jwt_decode from "jwt-decode";
 import { useEffect, useMemo, useReducer } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import BottomTabs from "./screens/BottomTab.screen";
 import Login from "./src/components/Login";
 
 import AuthContext from "./src/context/auth.context";
+import Router from "./src/router";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -93,21 +92,19 @@ export default function App() {
 
   return (    
      <AuthContext.Provider value={authContext}>
-       <NavigationContainer>
-        <SafeAreaProvider style={{ flex: 1 }}>
-          <QueryClientProvider client={queryClient}>
-            {loginState.isLoading ? (
-              <View>
-                <Text>Loading...</Text>
-              </View>
-            ) : loginState.user ? (
-              <BottomTabs />
-            ) : (
-              <Login />
-            )}
-          </QueryClientProvider>
-        </SafeAreaProvider>
-      </NavigationContainer> 
+      <SafeAreaProvider style={{ flex: 1 }}>
+        <QueryClientProvider client={queryClient}>
+          {loginState.isLoading ? (
+            <View>
+              <Text>Loading...</Text>
+            </View>
+          ) : loginState.user ? (
+            <Router />
+          ) : (
+            <Login />
+          )}
+        </QueryClientProvider>
+      </SafeAreaProvider>
     </AuthContext.Provider>
   );
 }

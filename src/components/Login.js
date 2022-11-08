@@ -28,7 +28,7 @@ const Login = () => {
     {
       clientId: CLIENT_ID,
       redirectUri,
-      scopes: ["openid", "profile", "email", "pegawai:0", "organization:1"],
+      scopes: ["openid", "profile", "email", "pegawai:0", "organization:1 read:cv"],
       prompt: "login",
     },
     discovery
