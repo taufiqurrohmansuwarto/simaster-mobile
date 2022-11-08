@@ -1,10 +1,10 @@
 import * as SecureStore from "expo-secure-store";
 import jwt_decode from "jwt-decode";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Image, StyleSheet, Text, View } from "react-native";
-import authContext from "../context/auth.context";
+import authContext from "../../context/auth.context";
 
-const Berita = () => {
+const Home = () => {
   const { logout } = useContext(authContext);
 
   const [user, setUser] = useState(null);
@@ -19,7 +19,6 @@ const Berita = () => {
     getUser();
 
   }, []);
-
 
   return (
     <View style={styles.container}>
@@ -40,8 +39,8 @@ const Berita = () => {
         </View>
       )}
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -64,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Berita;
+export default Home
