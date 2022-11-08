@@ -13,7 +13,7 @@ const joinOrganization = (data) => {
 };
 
 const organization = data => {
-  return data[0]?.name
+  return data?.[0]?.name
 }
 
 const Beranda = () => {
@@ -28,8 +28,8 @@ const Beranda = () => {
           <View style={styles.userInfo}>
             <Text style={styles.nama}>{data?.nama}</Text>
             <Text style={styles.nip}>{data?.nip_baru}</Text>
-            {/* <Text style={styles.opd}>{organization(data?.perangkat_daerah?.detail)}</Text> */}
-            <Text style={styles.opd}>{joinOrganization(data?.perangkat_daerah?.detail)}</Text>
+            <Text style={styles.opd}>{organization(data?.perangkat_daerah?.detail)}</Text>
+            {/* <Text style={styles.opd}>{joinOrganization(data?.perangkat_daerah?.detail)}</Text> */}
           </View>
           <View style={styles.userPic}>
             <Image source={{uri:data?.foto}} style={styles.pic} />
