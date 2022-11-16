@@ -24,7 +24,7 @@ const Akun = () => {
       </Header>
       <View style={styles.userContainer}>
         <View style={styles.userPic}>
-          <Image source={{uri:data.foto}} style={styles.pic} />
+          <Image source={{uri:data?.foto}} style={styles.pic} />
         </View>
         <View style={styles.userInfo}>
           <Text style={styles.nama}>{data?.nama}</Text>
