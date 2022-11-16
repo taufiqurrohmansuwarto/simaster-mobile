@@ -4,16 +4,23 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabNavigator } from '../components';
 import { NavigationContainer } from '@react-navigation/native';
 import { Beranda, Personal, Jabatan, Kepegawaian, Pendidikan, Diklat, DiklatDetail, Akun, About, SettingAkun, Faq, FaqDetail } from '../screens';
+import { View, Dimensions } from 'react-native';
 
+const { width, height } = Dimensions.get("window")
 const Tabs = createBottomTabNavigator();
 const BottomTab = () => {
   return (
-    <Tabs.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-      <Tabs.Screen name="Beranda" component={Beranda} options={{headerShown: false}} />
-      <Tabs.Screen name="Video HCA" component={Beranda} options={{headerShown: false}} />
-      <Tabs.Screen name="F.A.Q" component={Faq} options={{headerShown: false}} />
-      <Tabs.Screen name="Akun" component={Akun} options={{headerShown: false}} />
-    </Tabs.Navigator>
+    <View style={{
+      width,
+      height,
+    }}>
+      <Tabs.Navigator tabBar={props => <BottomTabNavigator {...props} />} screenOptions={{tabBarHideOnKeyboard: true}}>
+        <Tabs.Screen name="Beranda" component={Beranda} options={{headerShown: false}} />
+        <Tabs.Screen name="Video HCA" component={Beranda} options={{headerShown: false}} />
+        <Tabs.Screen name="F.A.Q" component={Faq} options={{headerShown: false}} />
+        <Tabs.Screen name="Akun" component={Akun} options={{headerShown: false}} />
+      </Tabs.Navigator>
+    </View>
   )
 }
 
